@@ -54,13 +54,6 @@ var server = http.createServer(function (request, response) {
   response.write(content);
   response.end();
 
-  //   else {
-  //     response.statusCode = 404;
-  //     response.setHeader("Content-Type", "text/html;charset=utf-8");
-  //     response.write(`你输入的路径不存在对应的内容`);
-  //     response.end();
-  //   }
-
   /******** 代码结束，下面不要看 ************/
 });
 
