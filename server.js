@@ -87,7 +87,7 @@ var server = http.createServer(function (request, response) {
       response.write(string);
     }
     response.end();
-  } else if (path === "/register" && method === "POST") {
+  } else if (path === "/register.html" && method === "GET") {
     response.setHeader("Content-Type", "text/html;charset=utf-8");
     const userArray = JSON.parse(fs.readFileSync("./db/users.json"));
     const array = []; //把上传的内容输入到该数组
@@ -139,7 +139,7 @@ var server = http.createServer(function (request, response) {
     try {
       content = fs.readFileSync(`${filePath}`);
     } catch (error) {
-      content = "文件不存在";
+      content = "fuck";
       response.statusCode = 404;
     }
     response.write(content);

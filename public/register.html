@@ -31,7 +31,7 @@
         console.log(name, password);
         $.ajax({
           method: "POST",
-          url: "/register",
+          url: "/register.html",
           contentType: "text/json;charset:UTF-8",
           data: JSON.stringify({ name, password }),
         }).then(
