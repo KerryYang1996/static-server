@@ -29,18 +29,18 @@
         const name = $form.find("input[name=name]").val();
         const password = $form.find("input[name = password]").val();
         console.log(name, password);
-        // $.ajax({
-        //   method: "POST",
-        //   url: "/register",
-        //   contentType: "text/json;charset:UTF-8",
-        //   data: JSON.stringify({ name, password }),
-        // }).then(
-        //   () => {
-        //     alert("注册成功呢");
-        //     location.href = "/sign_in.html";
-        //   },
-        //   () => {}
-        // );
+        $.ajax({
+          method: "POST",
+          url: "/register",
+          contentType: "text/json;charset:UTF-8",
+          data: JSON.stringify({ name, password }),
+        }).then(
+          () => {
+            alert("注册成功呢");
+            location.href = "/sign_in.html";
+          },
+          () => {}
+        );
       });
     </script>
   </body>
