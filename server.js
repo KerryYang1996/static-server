@@ -114,31 +114,8 @@ var server = http.createServer(function (request, response) {
       response.end();
     });
   } else if (path === "/register.html" && method === "GET") {
-    response.setHeader("Content-Type", "text/html;charset=utf-8");
-    const userArray = JSON.parse(fs.readFileSync("./db/users.json"));
-    const array = []; //把上传的内容输入到该数组
-    request.on("data", (chunk) => {
-      //监听请求request的数据
-      array.push(chunk);
-    });
-    request.on("end", () => {
-      const string = Buffer.concat(array).toString(); //把不同的内容合成字符串
-      console.log(string);
-      const obj = JSON.parse(string);
-      console.log(obj.name);
-      console.log(obj.password);
-      const lastUser = userArray[userArray.length - 1];
-      const newUser = {
-        //id 为最后一个用户的id+1
-        id: lastUser ? lastUser.id + 1 : 1,
-        name: obj.name,
-        password: obj.password,
-      };
-      userArray.push(newUser);
-
-      fs.writeFileSync("./db/users.json", JSON.stringify(userArray));
-      response.end();
-    });
+    response.write("fuck");
+    response.end();
   } else {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/html;charset=utf-8");
